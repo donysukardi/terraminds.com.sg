@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "name": "Terra Minds",
+  "description": "Official Website of Terra Minds",
+  "icons": {
+    "60": "/content/themes/ds-terraminds/build/favicons/firefox_app_60x60.png",
+    "128": "/content/themes/ds-terraminds/build/favicons/firefox_app_128x128.png",
+    "512": "/content/themes/ds-terraminds/build/favicons/firefox_app_512x512.png"
+  },
+  "developer": {
+    "name": "DS Digital Studio",
+    "url": "http://dsds.io/"
+  }
+}

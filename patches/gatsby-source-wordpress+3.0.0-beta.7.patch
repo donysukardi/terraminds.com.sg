@@ -1,0 +1,32 @@
+patch-package
+--- a/node_modules/gatsby-source-wordpress/fetch.js
++++ b/node_modules/gatsby-source-wordpress/fetch.js
+@@ -457,7 +457,7 @@ function getValidRoutes({
+   if (_useACF) {
+     // The OPTIONS ACF API Route is not giving a valid _link so let`s add it manually.
+     validRoutes.push({
+-      url: `${url}/acf/v2/options`,
++      url: `${url}/acf/v3/options/site-config`,
+       type: `${typePrefix}acf_options`
+     });
+     if (_verbose) console.log(colorized.out(`Added ACF Options route.`, colorized.color.Font.FgGreen));
+--- a/node_modules/gatsby-source-wordpress/normalize.js
++++ b/node_modules/gatsby-source-wordpress/normalize.js
+@@ -254,7 +254,7 @@ exports.searchReplaceContentUrls = function ({
+   entities,
+   searchAndReplaceContentUrls
+ }) {
+-  if (!_.isPlainObject(searchAndReplaceContentUrls) || !_.has(searchAndReplaceContentUrls, `sourceUrl`) || !_.has(searchAndReplaceContentUrls, `replacementUrl`) || typeof searchAndReplaceContentUrls.sourceUrl !== `string` || typeof searchAndReplaceContentUrls.replacementUrl !== `string`) {
++  if (!_.isPlainObject(searchAndReplaceContentUrls) || !_.has(searchAndReplaceContentUrls, `sourceUrl`) || !_.has(searchAndReplaceContentUrls, `replacementUrl`)) {
+     return entities;
+   }
+ 
+@@ -442,7 +442,7 @@ function () {
+ 
+         if (fileNodeID) {
+           e.localFile___NODE = fileNodeID;
+-          delete e.media_details.sizes;
++          // delete e.media_details.sizes;
+         }
+ 
+         return e;
