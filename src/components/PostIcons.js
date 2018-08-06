@@ -10,36 +10,47 @@ export default ({ node, className = `` }) => {
 
   return (
     <div className="post__info">
-      {node.date && <div className="post__info--item post__date">
-        <ClockIcon size={14} style={{ position: `relative`, bottom: 1 }} />
-        {` `}
-        {node.date}
+      {node.date && <div className="media">
+        <div className="media__img" style={{ marginRight: '8px' }}>
+          <ClockIcon size={14} style={{ position: `relative`, bottom: 1 }} />
+        </div>
+        <div className="media__body">
+          {node.date}
+        </div>
       </div>}
       {categories && !!categories.length && 
-        <div className="post__info--item post__category-item">
-          <OpenIcon size={14} style={{ position: `relative`, bottom: 1, marginRight: '6px' }} />
-          <ul className="post__category-list">
-            {categories.map(category => (
-              <li key={category.slug}>
-                <Link to={cLink(category.slug)} className="post__info--item post__category">
-                  {category.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="media mt--">
+          <div className="media__img" style={{ marginRight: '8px' }}>
+            <OpenIcon size={14} style={{ position: `relative`, bottom: 1 }} />
+          </div>
+          <div className="media__body">
+            <ul className="post__category-list">
+              {categories.map(category => (
+                <li key={category.slug}>
+                  <Link to={cLink(category.slug)} className="post__info--item post__category">
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>}
       {node.tags && !!node.tags.length &&
-        <div className="post__info--item post__category-item">
-          <TagIcon size={14} style={{ position: `relative`, bottom: 1, marginRight: '6px' }} />
-          <ul className="post__category-list">
-            {node.tags.map(tag => (
-              <li key={tag.slug}>
-                <Link to={tLink(tag.slug)} className="post__info--item post__category">
-                  {tag.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <div className="media mt--">
+          <div className="media__img" style={{ marginRight: '8px' }}>
+            <TagIcon size={14} style={{ position: `relative`, bottom: 1 }} />
+          </div>
+          <div className="media__body">
+            <ul className="post__category-list">
+              {node.tags.map(tag => (
+                <li key={tag.slug}>
+                  <Link to={tLink(tag.slug)} className="post__info--item post__category">
+                    {tag.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>}
     </div>
   )
