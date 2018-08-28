@@ -12,6 +12,7 @@ imageRendering='optimizeQuality' fillRule='evenodd' clipRule='evenodd' {...props
 
 class ScrollToTop extends React.Component {
 	handleClick = e => {
+		e.preventDefault();
 		window.scrollTo({
 	    top: 0,
 	    behavior: "smooth"
