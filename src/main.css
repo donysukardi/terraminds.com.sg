@@ -9595,9 +9595,16 @@ a-white:hover, a-white:active, a-white:focus {
 }
 
 .author .media__img {
-  width: 64px;
-  height: 64px;
+  height: 48px;
+  width: 48px;
   border-radius: 50%;
+}
+
+@media screen and (min-width: 720px) {
+  .author .media__img {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .author .post__date {
