@@ -2,7 +2,7 @@ import React from 'react'
 
 const getUrls = (url, title, summary, img) => ({
 	facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-	twitter: `https://twitter.com/home?status=${url}`,
+	twitter: `https://twitter.com/intent/tweet?text=${title}%20${url}`,
 	google: `https://plus.google.com/share?url=${url}`,
 	linkedin: `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${title}&summary=${summary}&source=TerraMinds`,
 	pinterest: `https://pinterest.com/pin/create/button/?url=${url}&media=${img}&description=${title}`
