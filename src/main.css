@@ -8730,7 +8730,8 @@ a-white:hover, a-white:active, a-white:focus {
   right: 0;
   bottom: 0;
   left: 0;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
 
 .panel__img, .panel__img img {
   border: none;
