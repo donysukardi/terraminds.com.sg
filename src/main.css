@@ -9607,6 +9607,10 @@ a-white:hover, a-white:active, a-white:focus {
   }
 }
 
+.blog-links a:hover {
+  color: #95c040;
+}
+
 .author .post__date {
   font-size: .85rem;
   display: block;
