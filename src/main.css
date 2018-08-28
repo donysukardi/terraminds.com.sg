@@ -9569,6 +9569,10 @@ a-white:hover, a-white:active, a-white:focus {
   font-weight: inherit;
 }
 
+.post--single .content-col ul h2 {
+  margin-top: 24px;
+}
+
 .title--blog .title__secondary {
   background-color: #ea5d2e;
   border-color: #ea5d2e;
