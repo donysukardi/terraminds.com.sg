@@ -52,10 +52,11 @@ class Home extends Component {
                     </div>
                   </div>
                 ))}
-                <div className="view-all"><Link to={cLink('all')}>View All</Link></div>
+                {recentPosts.length > 1 && 
+                <div className="view-all"><Link to={cLink('all')}>View All</Link></div>}
               </div>
               <div className="featured-categories">
-              {featuredCategories.map(({ slug, name, posts }) => (
+              {recentPosts.length > 1 && featuredCategories.map(({ slug, name, posts }) => (
                 !!posts.length && (
                   <div className="featured-category" key={slug}>
                     <h2 className="title-boxed">

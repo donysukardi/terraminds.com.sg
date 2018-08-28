@@ -292,11 +292,11 @@ exports.createPages = ({ graphql, actions }) => {
             path: `/blog/`,
             component: path.resolve(`./src/templates/blog-home.js`),
             context: {
-              recentPosts: posts.slice(0, FEATURED_POSTS_SIZE),
+              recentPosts: posts.length > FEATURED_POSTS_SIZE ? posts.slice(0, FEATURED_POSTS_SIZE) : posts,
               featuredCategories: featuredCategories.map(x => ({
                 slug: x.slug,
                 name: x.name,
-                posts: categoryPosts[x.slug].slice(0, FEATURED_POSTS_SIZE)
+                posts: categoryPosts[x.slug].length > FEATURED_POSTS_SIZE ? categoryPosts[x.slug].slice(0, FEATURED_POSTS_SIZE) : categoryPosts[x.slug]
               }))
             },
           })

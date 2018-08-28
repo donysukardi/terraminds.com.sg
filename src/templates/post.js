@@ -22,8 +22,9 @@ class PostTemplate extends Component {
     const siteUrl = data.site.siteMetadata.siteUrl
     const description = post.excerpt.replace(/<(?:.|\n)*?>/gm, '')
 
-    const hasPageBuilder = post.acf &&
-              post.acf.page_builder_post_post && !!post.acf.page_builder_post_post.length
+    const hasPageBuilder = false
+      // post.acf &&
+      //        post.acf.page_builder_post_post && !!post.acf.page_builder_post_post.length
 
     return (
       <Layout
@@ -41,16 +42,11 @@ class PostTemplate extends Component {
         <div className="wrapper-small">
           <BlogNav categories={categories} />
         </div>
-        <Heading title_1="Blog" title_2={post.title} title_template="blog" />
+        <Heading title_2={post.title} title_template="blog" />
         <section className="section section--page post--single">
           <div className="wrapper-read text-short">
             <div className="content-col">
-              {post.featured_media && <div className="post__featured-img-wrapper">
-                <Img className="post__featured-img" {...post.featured_media.localFile.childImageSharp} />
-              </div>}
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
-              {hasPageBuilder && <PageBuilder pageBuilder={post.acf.page_builder_post_post} />}
-              <div className="mt+">
+              <div className="mb+">
                 <div className="author media">
                   <img className="media__img mr-" src={author.avatar_urls.wordpress_96} alt="" />
                   <div className="media__body">
@@ -62,6 +58,11 @@ class PostTemplate extends Component {
                   <PostIcons node={{ categories: post.categories, tags: post.tags }} />
                 </div>
               </div>
+              {post.featured_media && <div className="post__featured-img-wrapper">
+                <Img className="post__featured-img" {...post.featured_media.localFile.childImageSharp} />
+              </div>}
+              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              {hasPageBuilder && <PageBuilder pageBuilder={post.acf.page_builder_post_post} />}
               <section className="section section--small">
                 <div className="wrapper">
                   <h2 className="title-boxed">
@@ -105,6 +106,15 @@ PostTemplate.propTypes = {
 
 export default PostTemplate
 
+// acf {
+//   page_builder_post_post {
+//     __typename
+//     ... on WordPressAcf_text_block {
+//       ...ACFTextBlock
+//     }
+//   }
+// }
+
 export const pageQuery = graphql`
   query($id: String!, $includeNext:Boolean!, $includePrev:Boolean!, $nextId:String!, $prevId:String!) {
     wordpressPost(id: { eq: $id }) {
@@ -127,14 +137,7 @@ export const pageQuery = graphql`
           wordpress_96
         }
       }
-      acf {
-        page_builder_post_post {
-          __typename
-          ... on WordPressAcf_text_block {
-            ...ACFTextBlock
-          }
-        }
-      }
+      
       featured_media {
         localFile {
           childImageSharp {

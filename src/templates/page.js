@@ -118,7 +118,25 @@ export const pageQuery = graphql`
             ...ACFTestimonials
           }
         }
-        ...Schedule
+        schedule_title
+        schedule{
+          name
+          age
+          url
+          subjects {
+            subject
+          }
+          schedule{
+            day
+            time
+          }
+
+          day
+          times {
+            time
+          }
+
+        }
       }
     }
     site {

@@ -9529,7 +9529,7 @@ a-white:hover, a-white:active, a-white:focus {
 
 .blog-links {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   padding: 16px 8px;
   border: 1px solid rgba(0,0,0,.125);
@@ -9567,6 +9567,16 @@ a-white:hover, a-white:active, a-white:focus {
 .blog-links a {
   color: rgba(0,0,0,0.65);
   font-weight: inherit;
+}
+
+.title--blog .title__secondary {
+  background-color: #ea5d2e;
+  border-color: #ea5d2e;
+}
+
+.author .post__info .media__img {
+  width: auto;
+  height: auto;
 }
 
 .nav__link--active,

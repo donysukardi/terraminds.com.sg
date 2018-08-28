@@ -16,7 +16,7 @@ class Heading extends React.Component {
 			<div className="wrapper">
         <h1 className={`title ${titleCls}`}>
           <span className="title__text">
-            <span className="title__primary" dangerouslySetInnerHTML={{__html: title1 }} />
+            {!!title1 && <span className="title__primary" dangerouslySetInnerHTML={{__html: title1 }} />}
             {!!title2 && <span className=" title__secondary" dangerouslySetInnerHTML={{__html: title2 }} />}
           </span>
         </h1>
