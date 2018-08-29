@@ -965,6 +965,8 @@ ol, ul {
 /* Definition Lists */
 body {
   background: white;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
   -webkit-text-size-adjust: 100%; }
 
 /*------------------------------------*    $MEDIA ELEMENTS
