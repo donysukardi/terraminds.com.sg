@@ -97,7 +97,7 @@ class PageTemplate extends Component {
 
                 <p>
                   Tel: <a href="tel:+6567813688" className="link-silent">+65 6781 3688</a> / <a href="tel:+6598336282" className="link-silent">+65 9833 6282</a><br />
-                  Email:  <a href="mailto: info@terra.dsds.io" className="link-silent"> info@terra.dsds.io</a>
+                  Email:  <a href="mailto:info@terraminds.com.sg" className="link-silent"> info@terraminds.com.sg</a>
                 </p>
                     
                 <h4>Opening Hours</h4>
