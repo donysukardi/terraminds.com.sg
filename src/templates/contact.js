@@ -6,6 +6,10 @@ import Heading from '../components/Heading'
 import Layout from "../components/Layout"
 
 class PageTemplate extends Component {
+  state = {
+    submitted: false
+  }
+
   handleSubmit = e => {
     e.preventDefault()
 
@@ -18,19 +22,26 @@ class PageTemplate extends Component {
       data += input.name + "=" + encodeURIComponent(input.value) + "&";
     }
 
+    this.setState({
+      submitted: false
+    })
+
     const xhr = new XMLHttpRequest();
     xhr.open('POST', action, true);
     xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onload = function() {
+    xhr.onload = () => {
       if (xhr.status === 200) {
-        // addClass(document.getElementById("contact-form-confirmation"), "is-active");
+        this.setState({
+          submitted: true
+        })
       }
     };
     xhr.send(data)
   }
 
   render() {
+    const { submitted } = this.state
     const { data: { wordpressPage, allWordpressAcfOptions }, location } = this.props
     const { opening_hours: openingHours } = allWordpressAcfOptions.edges[0].node
     const currentPage = wordpressPage
@@ -47,12 +58,12 @@ class PageTemplate extends Component {
             <ul className="layout layout--large">
               <li className="layout__item u-1/2@desk mb+">
                 <h3>Contact Us</h3>
-                <p id="contact-form-confirmation" className="text-secondary contact-form-confirmation">
+                <p id="contact-form-confirmation" className={`text-secondary contact-form-confirmation${submitted ? ' is-active' : ''}`}>
                   Thank you for contacting us. We will be in touch with you shortly.
                 </p>
                 <div className="contact-form">
                   <p>For registration or enquiries, please contact us by filling out the form below.</p>
-                  <form method="POST" id="contact-form" onSubmit={this.handleSubmit} action="https://formspree.io/info@terraminds.com.sg" className="contact-form">
+                  <form id="contact-form" action="https://formcarry.com/s/dF554gn7tsJ" method="POST" accept-charset="UTF-8" onSubmit={this.handleSubmit} className="contact-form">
                     <ul className="layout">
                       <li className="layout__item u-1/2@lap-and-up mb">
                         <label className="input-text input-text--boxed  u-1/1">
@@ -77,8 +88,6 @@ class PageTemplate extends Component {
                           <textarea className="input-text__input  u-1/1" name="message" placeholder="" required />
                           <span className="input-text__label">Message</span>
                         </label>
-                        <input type="text" name="_gotcha" style={{display:"none"}} />
-                        <input type="hidden" name="_subject" value="New submission!" />
                       </li>
                     </ul>
                     <button className="btn" id="submit">Send</button>
