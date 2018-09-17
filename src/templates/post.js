@@ -61,7 +61,7 @@ class PostTemplate extends Component {
               {post.featured_media && <div className="post__featured-img-wrapper">
                 <Img className="post__featured-img" {...post.featured_media.localFile.childImageSharp} />
               </div>}
-              <div dangerouslySetInnerHTML={{ __html: post.content }} />
+              <div className="post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
               {hasPageBuilder && <PageBuilder pageBuilder={post.acf.page_builder_post_post} />}
               <section className="section section--small">
                 <div className="wrapper">

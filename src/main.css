@@ -9706,8 +9706,8 @@ img.aligncenter {
   padding-left: 1.5rem;
 }
 
-.content-col ul,
-.content-col ol {
+.post__content ul,
+.post__content ol {
   list-style: disc;
   margin-left: 1.25em;
 }
