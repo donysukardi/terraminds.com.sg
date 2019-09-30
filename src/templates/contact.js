@@ -90,6 +90,7 @@ class PageTemplate extends Component {
                         </label>
                       </li>
                     </ul>
+                    <input type="hidden" name="_gotcha">
                     <button className="btn" id="submit">Send</button>
                   </form>
                 </div>
