@@ -62,7 +62,7 @@ class PageTemplate extends Component {
 
             <section className="section--hiring d d--h-top-left">
               <p className="">
-                If you are interested to join our team, <span className="nowrap">email us your resume at</span> <a href="mailto:hire@terra.dsds.io">hire@terra.dsds.io</a>
+                If you are interested to join our team, <span className="nowrap">email us your resume at</span> <a href="mailto:hire@terraminds.com.sg">hire@terraminds.com.sg</a>
               </p>
             </section>
           </div>
