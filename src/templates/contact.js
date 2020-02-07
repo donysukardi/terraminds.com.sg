@@ -104,7 +104,8 @@ class PageTemplate extends Component {
                 </p>
 
                 <p>
-                  Tel: <a href="tel:+6598336282" className="link-silent">+65 9833 6282</a><br />
+                  Office: <a href="tel:+6569268757" className="link-silent">+65 6926 8757</a><br />
+                  Mobile: <a href="tel:+6598336282" className="link-silent">+65 9833 6282</a><br />
                   Email:  <a href="mailto:info@terraminds.com.sg" className="link-silent"> info@terraminds.com.sg</a>
                 </p>
                     
