@@ -93,10 +93,10 @@ class Layout extends React.Component {
           </Link>
           <div className="footer__info">
             <div className="footer__info-section">
-              11 Tampines Street 32 #02-03 Tampines Mart<br />
-              Singapore 529287</div>
+              Office: 73 Ubi Road 1 #09-62 Oxley Bizhub<br> Singapore 408733<br>Lesson location: 1 Marine Parade Central #02-03  (Above McDonalds)<br> Singapore 449408
+            </div>
             <div className="footer__info-section">
-              Tel: <a href="tel:+6567813688" className="link-silent">+65 6781 3688</a> / <a href="tel:+6598336282" className="link-silent">+65 9833 6282</a><br />
+              Tel: <a href="tel:+6569268757" className="link-silent">+65 6926 8757</a> / <a href="tel:+6598336282" className="link-silent">+65 9833 6282</a><br />
               Email:  <a href="mailto: info@terraminds.com.sg" className="link-silent"> info@terraminds.com.sg</a>
             </div>
           </div>
