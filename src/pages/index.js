@@ -15,6 +15,8 @@ class PageTemplate extends Component {
     const bgImg =
       currentPage.featured_media.localFile.childImageSharp.resize.src;
 
+    console.log(announcements);
+
     return (
       <Layout location={location} isHeaderTinted>
         <section className="hero">
@@ -58,21 +60,33 @@ class PageTemplate extends Component {
         <section className="section--news">
           <div className="wrapper mv">
             <ul className="announcement">
-              {announcements.map((x) => (
-                <li key={x.title} className="announcement__item">
-                  <Link
-                    className="announcement__link link-silent media"
-                    to={x.link}
-                  >
-                    <span className="announcement__tag btn media__img">
-                      {x.tag}
-                    </span>
-                    <span className="announcement__title  media__body">
-                      {x.title}
-                    </span>
-                  </Link>
-                </li>
-              ))}
+              {announcements.map((x) => {
+                const isInternalLink = x.link.charAt(0) === "/";
+                const LinkComponent = isInternalLink ? Link : "a";
+                const linkProps = isInternalLink
+                  ? { to: x.link }
+                  : {
+                      href: x.link,
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    };
+
+                return (
+                  <li key={x.title} className="announcement__item">
+                    <LinkComponent
+                      className="announcement__link link-silent media"
+                      {...linkProps}
+                    >
+                      <span className="announcement__tag btn media__img">
+                        {x.tag}
+                      </span>
+                      <span className="announcement__title  media__body">
+                        {x.title}
+                      </span>
+                    </LinkComponent>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </section>
@@ -233,19 +247,16 @@ class PageTemplate extends Component {
               education centres.
             </p>
             <ul className="flex flex--center flex--fit">
-              {partners.map(
-                (x) =>
-                  console.log(x) || (
-                    <li key={x.name} className="flex__item flex-auto">
-                      <div className="partner" title={x.name}>
-                        <img
-                          alt={x.name}
-                          src={x.image.localFile.childImageSharp.resize.src}
-                        />
-                      </div>
-                    </li>
-                  )
-              )}
+              {partners.map((x) => (
+                <li key={x.name} className="flex__item flex-auto">
+                  <div className="partner" title={x.name}>
+                    <img
+                      alt={x.name}
+                      src={x.image.localFile.childImageSharp.resize.src}
+                    />
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </section>
