@@ -15,8 +15,6 @@ class PageTemplate extends Component {
     const bgImg =
       currentPage.featured_media.localFile.childImageSharp.resize.src;
 
-    console.log(announcements);
-
     return (
       <Layout location={location} isHeaderTinted>
         <section className="hero">
