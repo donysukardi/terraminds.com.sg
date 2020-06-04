@@ -1,13 +1,20 @@
-const baseUrl = process.env.API_URL
-const protocol = process.env.API_PROTOCOL
-const sourceRegex = new RegExp( `(")(${protocol}:\\/\\/${baseUrl})(.+?)(\\\\?")`, 'gm')
-const siteUrl = process.env.NODE_ENV === 'development' ? (process.env.SITE_URL || 'http://localhost:8000') : process.env.SITE_URL
+const baseUrl = process.env.API_URL;
+const protocol = process.env.API_PROTOCOL;
+const trackingId = process.env.TRACKING_ID;
+const sourceRegex = new RegExp(
+  `(")(${protocol}:\\/\\/${baseUrl})(.+?)(\\\\?")`,
+  "gm"
+);
+const siteUrl =
+  process.env.NODE_ENV === "development"
+    ? process.env.SITE_URL || "http://localhost:8000"
+    : process.env.SITE_URL;
 
 module.exports = {
   siteMetadata: {
     title: `Terra Minds`,
     subtitle: `Nurturing creativity through science and nature`,
-    siteUrl: siteUrl
+    siteUrl: siteUrl,
   },
   plugins: [
     // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
@@ -36,14 +43,28 @@ module.exports = {
         useACF: true,
         searchAndReplaceContentUrls: {
           sourceUrl: sourceRegex,
-          replacementUrl: function replacer(match, p1, p2, p3, p4, offset, string) {
-            return p3.startsWith('/wp-content') ? match : p1 + p3 + p4;
-          }
+          replacementUrl: function replacer(
+            match,
+            p1,
+            p2,
+            p3,
+            p4,
+            offset,
+            string
+          ) {
+            return p3.startsWith("/wp-content") ? match : p1 + p3 + p4;
+          },
         },
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-glamor`
+    `gatsby-plugin-glamor`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: trackingId,
+      },
+    },
   ],
-}
+};

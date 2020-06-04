@@ -636,6 +636,14 @@
     core-js "^2.5.7"
     regenerator-runtime "^0.11.1"
 
+"@babel/runtime@7.0.0-beta.52":
+  version "7.0.0-beta.52"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.0.0-beta.52.tgz#3f3b42b82b92b4e1a283fc78df1bb2fd4ba8d0c7"
+  integrity sha1-PztCuCuStOGig/x43xuy/Uuo0Mc=
+  dependencies:
+    core-js "^2.5.7"
+    regenerator-runtime "^0.12.0"
+
 "@babel/template@7.0.0-beta.44":
   version "7.0.0-beta.44"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.0.0-beta.44.tgz#f8832f4fdcee5d59bf515e595fc5106c529b394f"
@@ -4501,9 +4509,10 @@ gatsby-cli@^2.0.0-beta.6:
     yargs "^11.1.0"
     yurnalist "^0.2.1"
 
-gatsby-image@next:
+gatsby-image@2.0.0-beta.6:
   version "2.0.0-beta.6"
   resolved "https://registry.yarnpkg.com/gatsby-image/-/gatsby-image-2.0.0-beta.6.tgz#c23a51405d87091bff62ce881a877cacb53829b1"
+  integrity sha1-wjpRQF2HCRv/Ys6IGod8rLU4KbE=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     prop-types "^15.6.1"
@@ -4519,17 +4528,26 @@ gatsby-link@^2.0.0-beta.4:
     react-lifecycles-compat "^3.0.2"
     ric "^1.3.0"
 
-gatsby-paginate@^1.0.16:
+gatsby-paginate@1.0.16:
   version "1.0.16"
   resolved "https://registry.yarnpkg.com/gatsby-paginate/-/gatsby-paginate-1.0.16.tgz#b45b92898005aa798b3b51c7abab286753e4cbe5"
+  integrity sha512-X0eZu2JrDrS1leUdu7CrdJWARGD0EFJwyhoD93W7n+DcD3ugqPS84faBOJeNJkJxwcPPJCMTt1Bm9+FiTpMBrQ==
   dependencies:
     path "^0.12.7"
 
-gatsby-plugin-glamor@next:
+gatsby-plugin-glamor@2.0.0-beta.2:
   version "2.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-glamor/-/gatsby-plugin-glamor-2.0.0-beta.2.tgz#36ca9ce38d8dfd51f56f4543698bf96284670630"
+  integrity sha1-Nsqc442N/VH1b0VDaYv5YoRnBjA=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
+
+gatsby-plugin-google-analytics@2.0.0-beta.5:
+  version "2.0.0-beta.5"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.0-beta.5.tgz#a8d98168a7193c402043998109b1f4fe3acfb82c"
+  integrity sha512-HFwe/rklLPpXdoQCozbwxbOFlsxOwE0uFhTurDPJePZ8Ex8FSl41sCzGQ9UtQg7o/WaoI+VJdvFSujZ8HcTnEA==
+  dependencies:
+    "@babel/runtime" "7.0.0-beta.52"
 
 gatsby-plugin-page-creator@^2.0.0-beta.4:
   version "2.0.0-beta.4"
@@ -4544,15 +4562,17 @@ gatsby-plugin-page-creator@^2.0.0-beta.4:
     parse-filepath "^1.0.1"
     slash "^1.0.0"
 
-gatsby-plugin-react-helmet@next:
+gatsby-plugin-react-helmet@3.0.0-beta.3:
   version "3.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-react-helmet/-/gatsby-plugin-react-helmet-3.0.0-beta.3.tgz#916ad68ff19de9d084a35cbda4a32ea88fe4b7e9"
+  integrity sha1-kWrWj/Gd6dCEo1y9pKMuqI/kt+k=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
-gatsby-plugin-sharp@next:
+gatsby-plugin-sharp@2.0.0-beta.5:
   version "2.0.0-beta.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-sharp/-/gatsby-plugin-sharp-2.0.0-beta.5.tgz#4e09abdd5b59753ca642ed246c0402d2409ddbbe"
+  integrity sha1-Tgmr3VtZdTymQu0kbAQC0kCd274=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     async "^2.1.2"
@@ -4569,9 +4589,10 @@ gatsby-plugin-sharp@next:
     sharp "^0.20.2"
     svgo "^0.7.2"
 
-gatsby-plugin-typography@next:
+gatsby-plugin-typography@2.2.0-beta.2:
   version "2.2.0-beta.2"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.2.0-beta.2.tgz#69030daefa9b8d3bf06b26e8fdbcc723652c3677"
+  integrity sha1-aQMNrvqbjTvwaybo/bzHI2UsNnc=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
@@ -4600,9 +4621,10 @@ gatsby-source-filesystem@^2.0.1-beta.5:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
-gatsby-source-wordpress@next:
+gatsby-source-wordpress@3.0.0-beta.7:
   version "3.0.0-beta.7"
   resolved "https://registry.yarnpkg.com/gatsby-source-wordpress/-/gatsby-source-wordpress-3.0.0-beta.7.tgz#c596355e297dce4612ed65498b01b670c33ee340"
+  integrity sha1-xZY1Xil9zkYS7WVJiwG2cMM+40A=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     axios "^0.18.0"
@@ -4616,18 +4638,20 @@ gatsby-source-wordpress@next:
     minimatch "^3.0.4"
     qs "^6.4.0"
 
-gatsby-transformer-sharp@next:
+gatsby-transformer-sharp@2.1.1-beta.4:
   version "2.1.1-beta.4"
   resolved "https://registry.yarnpkg.com/gatsby-transformer-sharp/-/gatsby-transformer-sharp-2.1.1-beta.4.tgz#ac441a5807b64b5d8b6744033a181f3f818a7cc3"
+  integrity sha1-rEQaWAe2S12LZ0QDOhgfP4GKfMM=
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
     bluebird "^3.5.0"
     fs-extra "^4.0.2"
     probe-image-size "^4.0.0"
 
-gatsby@next:
+gatsby@2.0.0-beta.42:
   version "2.0.0-beta.42"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.0.0-beta.42.tgz#c76c47867a7f2b10cbc23c9a2918e668efcbb178"
+  integrity sha1-x2xHhnp/KxDLwjyaKRjmaO/LsXg=
   dependencies:
     "@babel/code-frame" "7.0.0-beta.51"
     "@babel/core" "7.0.0-beta.51"
@@ -8401,6 +8425,11 @@ regenerator-runtime@^0.10.5:
 regenerator-runtime@^0.11.0, regenerator-runtime@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.11.1.tgz#be05ad7f9bf7d22e056f9726cee5017fbf19e2e9"
+
+regenerator-runtime@^0.12.0:
+  version "0.12.1"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
+  integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
 
 regenerator-transform@^0.12.4:
   version "0.12.4"
