@@ -271,7 +271,7 @@ class PageTemplate extends Component {
 
         <section className="section--quote">
           <div className="wrapper">
-            <h3>“Let children learn about, from, in and for nature”</h3>
+            <h2><i>Ignite the spark for learning!</i></h2>
           </div>
         </section>
       </Layout>
