@@ -241,8 +241,7 @@ class PageTemplate extends Component {
         <section className="section--partnerships">
           <div className="wrapper">
             <p className="mb+">
-              Terra Minds Learning Centre is proud to partner with the following
-              education centres.
+              Awesome partners we work with:
             </p>
             <ul className="flex flex--center flex--fit">
               {partners.map((x) => (
